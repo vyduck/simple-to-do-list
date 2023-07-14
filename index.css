@@ -36,10 +36,22 @@ body {
 
 #createTask {
     background: beige;
-    width: 50%;
+    width: 80%;
     border: 0px;
     font-size: large;
     margin: 0px 0px 10px 0px;
+}
+
+button {
+    background: beige;
+    border: 1px solid black;
+    padding: 10px;
+    font-size: large;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: rgb(212, 212, 189);
 }
 
 #createTask:focus {

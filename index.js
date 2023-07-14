@@ -49,10 +49,8 @@ let date = document.getElementById("date");
 date.innerHTML = new Date().toDateString();
 
 // New task handler
-let taskInput = document.getElementById("createTask");
-taskInput.addEventListener("keypress", (keyboardEvent) => {
-    if (keyboardEvent.code != "Enter") return;
-
+function createTask () {
+    if (taskInput.value == "") return;
     let task = {
         taskId : `task${localStorage.length +1}`,
         task: taskInput.value,
@@ -63,6 +61,12 @@ taskInput.addEventListener("keypress", (keyboardEvent) => {
     localStorage.setItem(task.taskId, JSON.stringify(task))
     updateTaskCount();
     taskInput.value = "";
+}
+let taskInput = document.getElementById("createTask");
+
+taskInput.addEventListener("keypress", (keyboardEvent) => {
+    if (keyboardEvent.code != "Enter") return;
+    createTask();
 })
 
 // Updating task count in widget
